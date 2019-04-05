@@ -1,0 +1,565 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Roboto:700i');
+* {
+  margin: 0;
+  padding: 0;
+  color: #412c2c;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+section.sec1 {
+	width: 100%;
+	height: 10vh;
+	background-size: cover;
+}
+
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	background: rgba(255,255,255,0.3);
+	padding: 0 80px;
+}
+
+div.logo {
+	float: left;
+}
+
+div.logo h2 {
+	font-size: 160%;
+	font-family: 'Lobster', cursive;
+}
+
+nav ul {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	list-style: none;
+}
+
+nav ul li a {
+	padding: 0 20px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Roboto', sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wrap {
+	margin: 0 auto;
+	width: 100%;
+	height: 0;
+	padding-top: 58%; /* ratio of image * 100 */
+	overflow: hidden;
+	position: relative;
+}
+
+.mockup {
+	position: absolute;
+	top: 0;
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.mockup::after {
+	content: '';
+	position: absolute;
+	background: rgba(51,71,89,0.5);
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.mockup__img {
+	display: block;
+	width: 1900px;
+}
+
+.screen,
+.mobile {
+	position: absolute;
+	overflow: hidden;
+	z-index: 100;
+	background: #333;
+	outline: 1px solid transparent;
+	-webkit-transform-origin: 0px 0px 0px;
+	transform-origin: 0px 0px 0px;
+}
+
+.screen {
+	width: 1280px;
+	height: 800px;
+	top: 10px;
+	left: 600px;
+	-webkit-transform: matrix3d(0.452711184975633, 0.139863853789781, 0, -0.000095269465775677, -0.00319943882448498, 0.673512589529646, 0, 0.000049453592261685, 0, 0, 1, 0, 382, 8, 0, 1);
+	transform: matrix3d(0.452711184975633, 0.139863853789781, 0, -0.000095269465775677, -0.00319943882448498, 0.673512589529646, 0, 0.000049453592261685, 0, 0, 1, 0, 382, 8, 0, 1);
+}
+
+.mobile {
+	width: 320px;
+	height: 480px;
+	top: 850px;
+	left: 525px;
+	-webkit-transform: matrix3d(0.442778970432011, 0.112834189093484, 0, -0.000053669440509915, -0.344035499291785, 0.346595156594271, 0, -0.000094674614416115, 0, 0, 1, 0, 105, 15, 0, 1);
+	transform: matrix3d(0.442778970432011, 0.112834189093484, 0, -0.000053669440509915, -0.344035499291785, 0.346595156594271, 0, -0.000094674614416115, 0, 0, 1, 0, 105, 15, 0, 1);
+}
+
+.slideshow {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	list-style-type: none;
+}
+
+.slideshow__item {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: 1;
+	-webkit-transform: translate3d(-100%, 0, 0);
+	transform: translate3d(-100%, 0, 0);
+}
+
+.slideshow__item.current{
+	pointer-events: auto;
+	z-index: 100;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.slideshow img {
+	width: 100%;
+}
+
+.slideshow__item.in--next {
+	-webkit-animation: inNext 0.5s forwards ease-in-out;
+	animation: inNext 0.5s forwards ease-in-out;
+}
+
+.slideshow__item.out--next {
+	-webkit-animation: outNext 0.5s forwards ease-in-out;
+	animation: outNext 0.5s forwards ease-in-out;
+}
+
+.slideshow__item.in--prev {
+	-webkit-animation: inPrev 0.5s forwards ease-in-out;
+	animation: inPrev 0.5s forwards ease-in-out;
+}
+
+.slideshow__item.out--prev {
+	-webkit-animation: outPrev 0.5s forwards ease-in-out;
+	animation: outPrev 0.5s forwards ease-in-out;
+}
+
+@-webkit-keyframes inPrev {
+	0% {
+		-webkit-transform: translate3d(-30%, 0, 0);
+		transform: translate3d(-30%, 0, 0);
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes inPrev {
+	0% {
+		-webkit-transform: translate3d(-30%, 0, 0);
+		transform: translate3d(-30%, 0, 0);
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@-webkit-keyframes inNext {
+	0% {
+		-webkit-transform: translate3d(30%, 0, 0);
+		transform: translate3d(30%, 0, 0);
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes inNext {
+	0% {
+		-webkit-transform: translate3d(30%, 0, 0);
+		transform: translate3d(30%, 0, 0);
+	}
+	100% {
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@-webkit-keyframes outPrev {
+	100% {
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+}
+
+@keyframes outPrev {
+	100% {
+		-webkit-transform: translate3d(100%, 0, 0);
+		transform: translate3d(100%, 0, 0);
+	}
+}
+
+@-webkit-keyframes outNext {
+	100% {
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+
+@keyframes outNext {
+	100% {
+		-webkit-transform: translate3d(-100%, 0, 0);
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Проба
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,900&subset=latin,cyrillic);
+
+body{
+  font:normal 100% 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-attachment: fixed;
+  color:#798289;
+}
+
+.content {
+  width: 90%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+#container {
+   position:relative;
+}
+#header {
+   background:#222;
+   padding:10px;
+}
+#body {
+   padding:10px;
+   padding-bottom:70px;   /* Высота блока "footer" */
+}
+
+#stats {
+  display: block;
+  width: 100%;
+  padding: 15px 0;
+  background: #f8f8f8;
+  border-top: 4px solid #c3c3c3;
+  border-bottom: 4px solid #c3c3c3;
+}
+
+#stats .row {
+  display: block;
+}
+
+.circle-container {
+  display: block;
+  float: left;
+  margin-bottom: 45px;
+  width:33.333%;
+}
+
+.circle-container h3 {
+  display: block;
+  text-align: center;
+  font-size: 2.25em;
+  line-height: 1.4em;
+  color: #363636;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.circlestat {
+  margin: 0 auto;
+}
+
+/*######Стили для демо###########*/
+.refreshBlock {
+  text-align: center;
+}
+
+a.refreshButton {
+  background: #01BC78;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+a.refreshButton:hover {
+  background: #01A066;
+}
+
+h1.title {
+  color:#f8f8f8;
+  font-size: 60px;
+  line-height: 80px;
+  margin:20px auto;
+  width: 70%;
+  text-align: center;
+}
+
+h1.title span {
+  display: block;
+  font-size: 50px;
+  line-height: 60px;
+}
+
+p.info {
+  width: 30%;
+  background: #fff;
+  text-align: center;
+  line-height: 30px;
+  color: #57565B;
+  margin:30px auto 50px;
+}
+
+
+/*Кнопка "К статье"*/
+.backToSitehereBtn{
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: #01BC78;
+  text-align: center;
+  line-height: 170px;
+  font-size: 20px;
+  border-radius: 50%;
+  color:#fff;
+  position: absolute;
+  text-decoration: none;
+  top:-40px;
+  left:-40px;
+  transform:rotate(-45deg) scale(1);
+  transition:all 0.25s linear;
+}
+
+.backToSitehereBtn:hover {
+  text-decoration: none;
+  top:-10px;
+  left:-10px;
+  transform:rotate(-45deg) scale(1.3);
+}
+
+.circliful {
+    position: relative; 
+}
+
+.circle-text, .circle-info, .circle-text-half, .circle-info-half {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+}
+
+.circle-info, .circle-info-half {
+	color: #999;
+}
+
+.circliful .fa {
+	margin: -10px 3px 0 3px;
+	position: relative;
+	bottom: 4px;
+}
+
+
+
+
+
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+
+body {
+    background:#EDEDED;
+    font-family:'Roboto',sans-serif;
+}
+
+.oneA {
+	width: 300px; /*ширина блока*/
+	height: 200px; /*высота блока*/
+	margin: 10px auto;
+	position: relative;
+	overflow: hidden;
+	
+}
+
+.oneA:hover {
+	background: #323A47;
+}
+}
+.oneA p {
+	color: #fff; /*цвет текста описания*/
+	opacity: 0;
+	text-align: justify;
+	padding: 0 20px 20px 20px;
+	-webkit-transition: opacity 0.2s ease-in-out .6s;
+	transition: opacity 0.2s ease-in-out .6s;
+}
+
+.oneA h3 {
+	text-align: center;
+	color: #77B3D4; /*цвет текста заголовка*/
+	font-size: 20px;
+	margin: 0;
+	padding: 0;
+	line-height: 25px;
+	opacity: 0;
+	padding: 20px 20px 0 20px;
+	-webkit-transition: opacity 0.2s ease-in-out .6s;
+	transition: opacity 0.2s ease-in-out .6s;
+}
+
+.oneA:hover p, .oneA:hover h3{
+	opacity: 1;
+}
+
+.sitehereA {
+	position: absolute;
+	top:0;
+	left:0;
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	height: 100%;
+}
+
+/* Свойства блоков с иконками */
+.imgDef1, .imgDef2, .imgDef3{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top:0;
+	left:0;
+	-webkit-transition: all 0.4s ease-in-out .3s;
+	transition: all 0.4s ease-in-out .3s;
+	z-index: 10;
+}
+
+/* Изображение иконок 128x128px */
+.imgDef1 {
+	background: url(..//images/pencil.png) no-repeat 50% 50%;
+}
+
+.imgDef2 {
+	background: url(..//images/clapboard.png) no-repeat 50% 50%;
+}
+
+.imgDef3 {
+	background: url(..//images/unlocked.png) no-repeat 50% 50%;
+}
+
+
+/* Анимация иконки при наведении */
+.oneA:hover .imgDef1, .oneA:hover .imgDef2, .oneA:hover .imgDef3 {
+	top:-35%;
+	left:-40%;
+	-webkit-transform:scale(0.3);
+	transform:scale(0.3);
+}
+
+/*Обводка*/
+.lineTop, .lineRight, .lineBottom, .lineLeft {
+	position: absolute;
+	background: #77B3D4; /*цвет границы*/
+	-webkit-transition:
+		top 0.4s ease-in-out 0s,
+		right 0.4s ease-in-out 0s,
+		bottom 0.4s ease-in-out 0s,
+		left 0.4s ease-in-out 0s;
+	transition:
+		top 0.4s ease-in-out 0s,
+		right 0.4s ease-in-out 0s,
+		bottom 0.4s ease-in-out 0s,
+		left 0.4s ease-in-out 0s;
+}
+
+.lineTop, .lineBottom {	width: 100%;height: 6px;}
+.lineLeft, .lineRight {	width: 6px;height: 100%;}
+
+/*граница сверху*/
+.lineTop {left:-100%;top:0;}
+.oneA:hover .lineTop {left:0;}
+
+/*граница справа*/
+.lineRight {top:-100%;right:0;}
+.oneA:hover .lineRight {top:0;}
+
+/*граница снизу*/
+.lineBottom {right:-100%;bottom:0;}
+.oneA:hover .lineBottom {right:0;}
+
+/*граница слева*/
+.lineLeft {bottom:-100%;left:0;}
+.oneA:hover .lineLeft {bottom:0;}
+
+
+/*другое*/
+.cop {
+	text-align: center;
+}
